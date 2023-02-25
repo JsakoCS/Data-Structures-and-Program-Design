@@ -54,7 +54,7 @@ class Queue {
         String result="";
         Node runner=head;
       
-        while(runner!=null){
+        while(runner!=null) {
             result+=(runner.getData()+", ");
             runner=runner.getNextNode();
         }
