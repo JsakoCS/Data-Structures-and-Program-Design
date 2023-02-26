@@ -73,21 +73,21 @@ public class phoneBook {
         while(!focusNode.item.name.equalsIgnoreCase(n))
         {       
             parent = focusNode;
-            //left child
+            // left child
             if(n.compareTo(focusNode.item.name)< 0)
             {
                 isItLeftChild = true;
 
                 focusNode = focusNode.leftChild;
             }
-            //right child
+            // right child
             else
             {
                 isItLeftChild = false;
 
                 focusNode = focusNode.rightChild;
             }
-            //empty
+            // empty
             if(focusNode == null)
             {
                 System.out.println("User not exist");
@@ -102,21 +102,21 @@ public class phoneBook {
             {
                 root = null;
             }
-            //left child
+            // left child
             else if(isItLeftChild)
             {
                 parent.leftChild = null;
             }
-            //right child
+            // right child
             else
             {
                 parent.rightChild = null;
             }
         }
-        //when there is no right child
+        // when there is no right child
         else if (focusNode.rightChild == null)
         {
-            //root
+            // root
             if(focusNode == root)
             {
                 root = focusNode.leftChild;
@@ -126,26 +126,26 @@ public class phoneBook {
             {
                 parent.leftChild = focusNode.leftChild;
             }
-            //right child
+            // right child
             else
             {
                 parent.rightChild = focusNode.leftChild;
             }
         }
-        //when there is no left child
+        // when there is no left child
         else if(focusNode.leftChild == null)
         {
-            //root
+            // root
             if(focusNode == root)
             {
                 root = focusNode.rightChild;
             }
-            //left child
+            // left child
             else if(isItLeftChild)
             {
                 parent.leftChild = focusNode.rightChild;
             }
-            //right child
+            // right child
             else
             {
                 parent.rightChild =focusNode.leftChild;
@@ -155,17 +155,17 @@ public class phoneBook {
         else
         {
             node replacement = getReplacementNode(focusNode);
-            //root
+            // root
             if(focusNode == root)
             {
                 root = replacement;
             }
-            //left child
+            // left child
             else if(isItLeftChild)
             {
                 parent.leftChild = replacement;
             }
-            //right child
+            // right child
             else
             {
                 parent.rightChild = replacement;
@@ -240,8 +240,7 @@ public class phoneBook {
             {
                 String newPhoneNumber;
                 Scanner scan = new Scanner(System.in);
-                System.out.println("Please Enter a new number to replace old Number:"
-                                );
+                System.out.println("Please Enter a new number to replace old Number:");
                 newPhoneNumber = scan.next();
                 focusNode.item.phoneNum = newPhoneNumber;
                 System.out.println("Number has been change");
@@ -253,8 +252,7 @@ public class phoneBook {
             {
                 String newPhoneNumber;
                 Scanner scan = new Scanner(System.in);
-                System.out.println("Please Enter a new number to replace old Number:"
-                                );
+                System.out.println("Please Enter a new number to replace old Number:");
                 newPhoneNumber = scan.next();
                 focusNode.item.phoneNum = newPhoneNumber;
                 System.out.println("Number has been change");
